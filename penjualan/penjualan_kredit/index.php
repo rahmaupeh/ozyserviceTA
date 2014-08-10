@@ -54,10 +54,11 @@ if($kode_transaksi == ""){
           <option value=""> </option>
             <?php 
               $qtransaksi = "SELECT * FROM transaksi";
-              $qtransaksi = mysql_query($qtransaksi);
-              while($transaksi = mysql_fetch_array($qtransaksi)){
-                $c = mysql_num_rows(mysql_query("SELECT * FROM penjualan WHERE kode_transaksi='$transaksi[kode_transaksi]'"));
-                if($c == 0){
+              $qktransaksi = mysql_query($qtransaksi);
+              print_r($qktransaksi);
+              while($transaksi = mysql_fetch_array($qktransaksi)){
+                $c = mysql_num_rows(mysql_query("SELECT * FROM transaksi WHERE kode_transaksi='$transaksi[kode_transaksi]'"));
+                if($c != 0){
             ?>
           <option value="<?php echo $transaksi["kode_transaksi"];?>"> <?php echo $transaksi["kode_transaksi"];?></option>
             <?php
