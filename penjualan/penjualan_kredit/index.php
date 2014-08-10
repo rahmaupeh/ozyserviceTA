@@ -51,7 +51,7 @@ if($kode_transaksi == ""){
     <label for="inputkode_barang" class="col-lg-2 control-label">No Transaksi</label>
     <div class="col-lg-10">
       <select class="form-control" name="kode_transaksi">
-          <option value=""> </option>
+          <option value="">Pilih No Transaksi ...</option>
             <?php 
               $qtransaksi = "SELECT * FROM transaksi";
               $qktransaksi = mysql_query($qtransaksi);
